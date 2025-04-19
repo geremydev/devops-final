@@ -1,10 +1,84 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Hola Mundo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hola Mundo desde DevOps</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Orbitron', sans-serif;
+      background: #0f2027;  /* fallback for old browsers */
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      color: #00fff7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 40px #00fff7;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { text-shadow: 0 0 10px #00fff7; }
+      50% { text-shadow: 0 0 30px #00fff7; }
+      100% { text-shadow: 0 0 10px #00fff7; }
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
   <h1>¡Hola Mundo desde DevOps!</h1>
+
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100 },
+        "size": { "value": 3 },
+        "color": { "value": "#00fff7" },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00fff7",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": {
+          "repulse": { "distance": 100 },
+          "push": { "particles_nb": 4 }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
